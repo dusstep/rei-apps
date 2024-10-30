@@ -1,0 +1,112 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Container for Centering */
+.container {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Logo Styling */
+.logo {
+    width: 80px;
+    margin-bottom: 1rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Heading Styling */
+h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: #0077cc;
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    text-align: left;
+}
+
+input[type="number"] {
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    outline: none;
+    transition: border 0.3s ease;
+}
+
+input[type="number"]:focus {
+    border-color: #0077cc;
+}
+
+/* Button Styling */
+button {
+    padding: 0.8rem;
+    font-size: 1rem;
+    background-color: #0077cc;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #005fa3;
+}
+
+/* Results Section */
+.results {
+    margin-top: 1.5rem;
+    text-align: left;
+}
+
+.results h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.results ul {
+    list-style: none;
+}
+
+.results li {
+    margin-bottom: 0.5rem;
+}
+
+/* Error Styling */
+.error {
+    color: #d9534f;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}
