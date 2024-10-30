@@ -10,11 +10,11 @@ def home():
 @app.route('/calculate', methods=['POST'])
 def calculate():
     try:
-        purchase_price = float(request.form['purchase_price'])
-        annual_rent_income = float(request.form['annual_rent_income'])
-        annual_operating_expenses = float(request.form['annual_operating_expenses'])
-        loan_amount = float(request.form['loan_amount'])
-        down_payment = float(request.form['down_payment'])
+        purchase_price = float(request.form['purchase_price'].replace("$", "").replace(",", ""))
+        annual_rent_income = float(request.form['annual_rent_income'].replace("$", "").replace(",", ""))
+        annual_operating_expenses = float(request.form['annual_operating_expenses'].replace("$", "").replace(",", ""))
+        loan_amount = float(request.form['loan_amount'].replace("$", "").replace(",", ""))
+        down_payment = float(request.form['down_payment'].replace("$", "").replace(",", ""))
 
         # Ensure values are valid
         if any(value < 0 for value in [purchase_price, annual_rent_income, annual_operating_expenses, loan_amount, down_payment]):
