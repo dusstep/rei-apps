@@ -65,7 +65,7 @@ input[type="text"] {
     transition: border 0.3s ease;
 }
 
-input[type="number"]:focus {
+input[type="text"]:focus {
     border-color: #0077cc;
 }
 
@@ -109,4 +109,33 @@ button:hover {
     color: #d9534f;
     margin-top: 1rem;
     font-size: 0.9rem;
+}
+
+.legend-container {
+    width: 30%;
+    padding: 15px;
+    background-color: #f8f9fa; /* Light background to match modern styling */
+    border-radius: 5px;
+    margin-right: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
+
+.metrics-heading {
+    margin-bottom: 20px;
+}
+
+.metrics-list {
+    list-style-type: none;
+    padding: 0;
+    font-size: 14px;
+}
+
+.metrics-list li {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.metrics-list strong {
+    color: #333; /* Darker color for the term */
 }
