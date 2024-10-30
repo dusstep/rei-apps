@@ -49,7 +49,7 @@
             <button type="submit">Calculate</button>
         </form>
 
-        <!-- Results Section
+        <!-- Results Section-->
         {% if results %}
         <div class="results">
             <h2>Results</h2>
@@ -58,25 +58,6 @@
                 <li><strong>{{ key }}:</strong> {{ value }}</li>
                 {% endfor %}
             </ul>
-        </div>
-        {% endif %}-->
-
-        {% if results %}
-        <div class="results">
-            <h2>Calculated Results:</h2>
-            <p>NOI: {{ results['NOI'] }}</p>
-            <p>Cap Rate: {{ results['Cap Rate'] }}</p>
-            <p>GRM: {{ results['GRM'] }}</p>
-            <p>Cash-on-Cash Return: {{ results['Cash-on-Cash Return'] }}</p>
-            <p>LTV Ratio: {{ results['LTV Ratio'] }}</p>
-        </div>
-        <div class="inputs">
-            <h2>Entered Values:</h2>
-            <p>Purchase Price: {{ inputs.purchase_price }}</p>
-            <p>Annual Rent Income: {{ inputs.annual_rent_income }}</p>
-            <p>Annual Operating Expenses: {{ inputs.annual_operating_expenses }}</p>
-            <p>Loan Amount: {{ inputs.loan_amount }}</p>
-            <p>Down Payment: {{ inputs.down_payment }}</p>
         </div>
         {% endif %}
         

@@ -35,12 +35,12 @@ def calculate():
             "Cash-on-Cash Return": f"{cash_on_cash_return:.2f}%",
             "LTV Ratio": f"{loan_to_value_ratio:.2f}%"
         }
-        return render_template('index.html', results=results, inputs=inputs)
+        return render_template('index.html', results=results)
 
     except ValueError as e:
-        return render_template('index.html', error=f"Invalid input: {str(e)}", inputs=request.form)
+        return render_template('index.html', error=f"Invalid input: {str(e)}")
     except Exception as e:
-        return render_template('index.html', error="An unexpected error occurred.", inputs=request.form)
+        return render_template('index.html', error="An unexpected error occurred.")
     
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8080)  # Set the port to 8080 here
