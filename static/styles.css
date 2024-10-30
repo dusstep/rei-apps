@@ -55,7 +55,7 @@ label {
     text-align: left;
 }
 
-input[type="number"] {
+input[type="text"] {
     padding: 0.8rem;
     font-size: 1rem;
     border: 1px solid #ddd;
