@@ -4,9 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Real Estate Investment Calculator</title>
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Include Inputmask -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.7/inputmask.min.js"></script>
     <link rel="stylesheet" href="/static/styles.css">
 </head>
 <body>
+    <script>
+        $(document).ready(function(){
+            Inputmask({
+                alias: "currency",
+                prefix: "$",
+                groupSeparator: ",",
+                autoGroup: true,
+                digits: 2,
+                rightAlign: false
+            }).mask("#purchase_price, #annual_rent_income, #annual_operating_expenses, #loan_amount, #down_payment");
+        });
+    </script>
     <div class="container">
         <!-- Centered minimalistic logo image -->
         <img src="/static/logo.png" alt="Real Estate Logo" class="logo">
@@ -16,19 +32,19 @@
         <!-- Form for input fields -->
         <form method="POST" action="/calculate">
             <label for="purchase_price">Purchase Price</label>
-            <input type="number" id="purchase_price" name="purchase_price" placeholder="Enter purchase price" required>
+            <input type="text" id="purchase_price" name="purchase_price" placeholder="Enter purchase price" required>
 
             <label for="annual_rent_income">Annual Rent Income</label>
-            <input type="number" id="annual_rent_income" name="annual_rent_income" placeholder="Enter rent income" required>
+            <input type="text" id="annual_rent_income" name="annual_rent_income" placeholder="Enter rent income" required>
 
             <label for="annual_operating_expenses">Annual Operating Expenses</label>
-            <input type="number" id="annual_operating_expenses" name="annual_operating_expenses" placeholder="Enter expenses" required>
+            <input type="text" id="annual_operating_expenses" name="annual_operating_expenses" placeholder="Enter expenses" required>
 
             <label for="loan_amount">Loan Amount</label>
-            <input type="number" id="loan_amount" name="loan_amount" placeholder="Enter loan amount" required>
+            <input type="text" id="loan_amount" name="loan_amount" placeholder="Enter loan amount" required>
 
             <label for="down_payment">Down Payment</label>
-            <input type="number" id="down_payment" name="down_payment" placeholder="Enter down payment" required>
+            <input type="text" id="down_payment" name="down_payment" placeholder="Enter down payment" required>
 
             <button type="submit">Calculate</button>
         </form>
