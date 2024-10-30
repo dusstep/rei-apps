@@ -10,6 +10,7 @@ def home():
 @app.route('/calculate', methods=['POST'])
 def calculate():
     try:
+        # Get and process input values
         purchase_price = float(request.form['purchase_price'].replace("$", "").replace(",", ""))
         annual_rent_income = float(request.form['annual_rent_income'].replace("$", "").replace(",", ""))
         annual_operating_expenses = float(request.form['annual_operating_expenses'].replace("$", "").replace(",", ""))
@@ -20,7 +21,7 @@ def calculate():
         if any(value < 0 for value in [purchase_price, annual_rent_income, annual_operating_expenses, loan_amount, down_payment]):
             raise ValueError("Input values must be non-negative.")
 
-        # Calculate the financial metrics
+        # Perform calculations
         noi = annual_rent_income - annual_operating_expenses
         cap_rate = (noi / purchase_price) * 100
         grm = purchase_price / annual_rent_income if annual_rent_income != 0 else float('inf')
@@ -35,7 +36,16 @@ def calculate():
             "Cash-on-Cash Return": f"{cash_on_cash_return:.2f}%",
             "LTV Ratio": f"{loan_to_value_ratio:.2f}%"
         }
-        return render_template('index.html', results=results)
+
+        # Pass input values back to template
+        inputs = {
+            "purchase_price": request.form['purchase_price'],
+            "annual_rent_income": request.form['annual_rent_income'],
+            "annual_operating_expenses": request.form['annual_operating_expenses'],
+            "loan_amount": request.form['loan_amount'],
+            "down_payment": request.form['down_payment']
+        }
+        return render_template('index.html', results=results, inputs=inputs)
 
     except ValueError as e:
         return render_template('index.html', error=f"Invalid input: {str(e)}")

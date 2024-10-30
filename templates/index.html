@@ -31,20 +31,20 @@
         
         <!-- Form for input fields -->
         <form method="POST" action="/calculate">
-            <label for="purchase_price">Purchase Price</label>
-            <input type="text" id="purchase_price" name="purchase_price" placeholder="Enter purchase price" required>
+            <label for="purchase_price">Purchase Price:</label>
+            <input type="text" id="purchase_price" name="purchase_price" value="{{ inputs.purchase_price if inputs else '' }}" required>
 
-            <label for="annual_rent_income">Annual Rent Income</label>
-            <input type="text" id="annual_rent_income" name="annual_rent_income" placeholder="Enter rent income" required>
+            <label for="annual_rent_income">Annual Rent Income:</label>
+            <input type="text" id="annual_rent_income" name="annual_rent_income" value="{{ inputs.annual_rent_income if inputs else '' }}" required>
 
-            <label for="annual_operating_expenses">Annual Operating Expenses</label>
-            <input type="text" id="annual_operating_expenses" name="annual_operating_expenses" placeholder="Enter expenses" required>
+            <label for="annual_operating_expenses">Annual Operating Expenses:</label>
+            <input type="text" id="annual_operating_expenses" name="annual_operating_expenses" value="{{ inputs.annual_operating_expenses if inputs else '' }}" required>
 
-            <label for="loan_amount">Loan Amount</label>
-            <input type="text" id="loan_amount" name="loan_amount" placeholder="Enter loan amount" required>
+            <label for="loan_amount">Loan Amount:</label>
+            <input type="text" id="loan_amount" name="loan_amount" value="{{ inputs.loan_amount if inputs else '' }}" required>
 
-            <label for="down_payment">Down Payment</label>
-            <input type="text" id="down_payment" name="down_payment" placeholder="Enter down payment" required>
+            <label for="down_payment">Down Payment:</label>
+            <input type="text" id="down_payment" name="down_payment" value="{{ inputs.down_payment if inputs else '' }}" required>
 
             <button type="submit">Calculate</button>
         </form>
